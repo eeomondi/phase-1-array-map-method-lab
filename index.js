@@ -14,12 +14,10 @@ const tutorials = [
 function titleCased() {
   return tutorials.map((tutorial) => {
     return tutorial.split(' ').map(word => {
-      if (word === 'oo') {
-        return 'OO';
-      } else if (word === 'nan') {
-        return 'NaN';
-      } else if (word === 'jsonp') {
-        return 'JSONP';
+      // Convert word and target words to lowercase for case insensitive comparison
+      const lowerCaseWord = word.toLowerCase();
+      if (lowerCaseWord === 'oo' || lowerCaseWord === 'nan' || lowerCaseWord === 'jsonp') {
+        return word.toUpperCase();
       } else {
         return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
       }
