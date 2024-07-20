@@ -26,3 +26,4 @@ function titleCased() {
 }
 
 module.exports = titleCased;
+
