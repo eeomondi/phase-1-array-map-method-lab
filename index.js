@@ -1,4 +1,4 @@
-const tutorials = [
+/*const tutorials = [
   'what does the this keyword mean?',
   'What is the Constructor OO pattern?',
   'implementing Blockchain Web API',
@@ -15,4 +15,23 @@ const titleCased = () => {
   return tutorials.map();
 }
 
-console.log(typeof tutorials)
+console.log(typeof tutorials)*/
+
+function titleCased(tutorials) {
+  if (!Array.isArray(tutorials)) {
+    throw new Error('Expected an array of tutorials');
+  }
+
+  return tutorials.map((tutorial) => {
+    if (typeof tutorial!== 'tring') {
+      throw new Error('Expected a string tutorial name');
+    }
+
+    const words = tutorial.split(' ');
+    const titleCasedWords = words.map((word) => {
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    });
+
+    return titleCasedWords.join(' ');
+  });
+}
