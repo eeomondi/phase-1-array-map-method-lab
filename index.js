@@ -13,7 +13,17 @@ const tutorials = [
 
 function titleCased() {
   return tutorials.map((tutorial) => {
-    return tutorial.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
+    return tutorial.split(' ').map(word => {
+      if (word === 'oo') {
+        return 'OO';
+      } else if (word === 'nan') {
+        return 'NaN';
+      } else if (word === 'jsonp') {
+        return 'JSONP';
+      } else {
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      }
+    }).join(' ');
   });
 }
 
