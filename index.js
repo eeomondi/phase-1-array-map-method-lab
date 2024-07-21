@@ -12,16 +12,8 @@ const tutorials = [
 ];
 
 function titleCased() {
-  return tutorials.map((tutorial) => {
-    return tutorial.split(' ').map(word => {
-      // Convert word and target words to lowercase for case insensitive comparison
-      const lowerCaseWord = word.toLowerCase();
-      if (lowerCaseWord === 'oo' || lowerCaseWord === 'nan' || lowerCaseWord === 'jsonp') {
-        return word.toUpperCase();
-      } else {
-        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-      }
-    }).join(' ');
+  return tutorials.map(str => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
   });
 }
 
